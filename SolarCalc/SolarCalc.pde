@@ -1,3 +1,5 @@
+import de.looksgood.ani.*;
+import de.looksgood.ani.easing.*;
 import processing.net.*;
 import controlP5.*;
 
