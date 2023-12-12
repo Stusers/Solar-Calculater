@@ -13,6 +13,9 @@ int sunhours = 1;
 int efficency = 1;
 int time = 1;
 String textValue = "";
+int x = -200;
+int y = 100;
+int tick = 0;
 
 //Start of Project
 void setup()
@@ -31,6 +34,8 @@ void setup()
      .setColor(color(255,0,0))
      .setVisible(false)
      ;
+     
+   Ani.init(this);
  //textFont(font);
 }
 
@@ -49,7 +54,14 @@ void draw()
   //Animations ---
   fill(0, 0, 0);
   textSize(128);
-  text("Welcome!", 100, 150);
+  text("Welcome!", x, y)
+  ;
+  
+  
+   Ani.to(this, 20.0, "x", 150);
+  
+  
+   
 }
 //Gui end ---
 
