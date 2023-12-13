@@ -13,9 +13,7 @@ int sunhours = 1;
 int efficency = 1;
 int time = 1;
 String textValue = "";
-int x = -200;
-int y = 100;
-int tick = 0;
+
 
 //Start of Project
 void setup()
@@ -72,31 +70,13 @@ void draw()
   time = (cost /(efficency * sunhours * kwh));
   
   
-  
-  
-  
-  //Animations ---
-  
-  
-  
-   
+  //Test 
+  fill(0, 0, 0);
+  text(cp5.get(Textfield.class,"input1").getText(), 200,20);
+
 }
 //Gui end ---
 
-
-
-
-//Start up animations
-
-
-//Animations end ---
-
-//Maths---
-
-//Pay back formula = pay back == total intial cost // Capacity * Effiecency * Sunlight Hours * cost pKIlowatt hour
-
-
-//Maths end ---
-
-
-//Api?
+void foundroi(){
+  time = (cost /(efficency * sunhours * kwh));
+}
