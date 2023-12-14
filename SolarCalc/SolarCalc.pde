@@ -3,6 +3,8 @@ import controlP5.*;
 
 ControlP5 cp5;
 PImage backgroundImage;
+PFont customFont;
+int fontSize = 16;
 int currentWindowIndex = 1;
 //Variables
 
@@ -22,6 +24,9 @@ void setup()
 {
   size(800, 600);
   backgroundImage = loadImage("lol.png");  // Load your image file
+  customFont = createFont("stasfont.ttf", fontSize);
+  textFont(customFont);
+  textAlign(LEFT, CENTER);
   
   //PFont font = createFont("arial",20);
    cp5 = new ControlP5(this);
@@ -32,33 +37,49 @@ void setup()
      .setSize(200,40)
      .setColor(color(255,0,0))
      .setVisible(false)
-     .setColorBackground(color(255,255,255))
-     ;
+     .setAutoClear(false) // Disable auto-clearing when clicking the field
+     .setColorBackground(color(240)) // Background color
+     .setColorForeground(color(200)) // Border color
+     .setColorActive(color(255))
+     ; // Active (focused) color
    cp5.addTextfield("input2")
      .setPosition(width/3,200)
      .setSize(200,40)
-     .setColorBackground(color(255,255,255))
      .setColor(color(255,0,0))
      .setVisible(false)
-     ;
+     .setAutoClear(false) // Disable auto-clearing when clicking the field
+     .setColorBackground(color(240)) // Background color
+     .setColorForeground(color(200)) // Border color
+     .setColorActive(color(255))
+     ; // Active (focused) color
+     
    cp5.addTextfield("input3")
      .setPosition(width/3,300)
      .setSize(200,40)
-     .setColorBackground(color(255,255,255))
      .setColor(color(255,0,0))
      .setVisible(false)
-     ;
+     .setAutoClear(false) // Disable auto-clearing when clicking the field
+     .setColorBackground(color(240)) // Background color
+     .setColorForeground(color(200)) // Border color
+     .setColorActive(color(255))
+     ; // Active (focused) color
+     
    cp5.addTextfield("input4")
-     .setPosition(width/3,380)
+     .setPosition(width/3,400)
      .setSize(200,40)
-     .setColorBackground(color(255,255,255))
      .setColor(color(255,0,0))
      .setVisible(false)
+     .setAutoClear(false) // Disable auto-clearing when clicking the field
+     .setColorBackground(color(240)) // Background color
+     .setColorForeground(color(200)) // Border color
+     .setColorActive(color(255))
      ;
-   cp5.addButton("colorA")
+   cp5.addButton("Button")
      .setValue(0)
-     .setPosition(width/3,440)
+     .setPosition(width/2,600)
      .setSize(200,19)
+     .setColorBackground(color(140))
+     .setVisible(true)
      .addCallback(new CallbackListener() {
        public void controlEvent(CallbackEvent event) {
          if (event.getAction() == ControlP5.ACTION_CLICK) {
@@ -87,7 +108,14 @@ void draw()
        cp5.get(Textfield.class, "input2").setVisible(true);
        cp5.get(Textfield.class, "input3").setVisible(true);
        cp5.get(Textfield.class, "input4").setVisible(true);
+       cp5.get(Button.class, "Button").setVisible(true);
        
+       fill(255, 255, 255); // 
+       int offset = -150;
+       text("Costs", (width / 3)+ offset, 100+20);
+       text("Efficency", (width / 3)+ offset, 200+20);
+       text("Sunhours", (width / 3)+ offset, 300+20);
+       text("Cost per Kilowatt hour", (width / 3)+ offset, 400+20);
        
        
        
