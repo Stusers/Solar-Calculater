@@ -76,9 +76,9 @@ void setup()
      ;
    cp5.addButton("Button")
      .setValue(0)
-     .setPosition(width/2,600)
+     .setPosition(width/3,500)
      .setSize(200,19)
-     .setColorBackground(color(140))
+     .setColorBackground(color(40))
      .setVisible(true)
      .addCallback(new CallbackListener() {
        public void controlEvent(CallbackEvent event) {
